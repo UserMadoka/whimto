@@ -1,19 +1,29 @@
 <h2>Sign up</h2>
-
+<%= render "devise/shared/links" %>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :メールアドレス %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %>
+    <%= f.label :アカウント名 %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :表示ニックネーム %><br />
+    <%= f.text_field :nickname %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %><br />
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+    <% end %>
   </div>
 
   <div class="field">
@@ -21,9 +31,24 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :生年月日 %><br />
+    <%= f.text_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :性別 %><br />
+    <%= f.text_field :birthday %>
+  </div>
+
+  <div class="field">
+    <%= f.label :都道府県 %><br />
+    <%= f.text_field :birthday %>
+  </div>
+
   <div class="actions">
-    <%= f.submit "Sign up" %>
+    <%= f.submit "登録する" %>
   </div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
