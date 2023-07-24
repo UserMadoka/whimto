@@ -71,4 +71,6 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'pry-rails'
 gem 'devise'
+gem "dartsass-rails", "~> 0.5.0"
