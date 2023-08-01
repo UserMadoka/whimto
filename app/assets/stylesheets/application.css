@@ -3,7 +3,6 @@
 global reset
 ---------------------------------------------------------------
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
-
 /*common*/
 *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
@@ -32,4 +31,4 @@ table {
 
 *:focus {
   outline: none !important;
-}
+}/*# sourceMappingURL=application.css.map */
