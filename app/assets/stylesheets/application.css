@@ -1,3 +1,4 @@
+@charset "UTF-8";
 :root {
   --bg-color1: #E3E3D7;
   --bg-color2: #EFEFEF;
@@ -8,6 +9,7 @@
   --main-color5: #CBBC92;
   --basic-color1: #1A1A1A;
   --basic-color2: #BFBFBF;
+  --font-size-basic: clamp(1.4rem, 2.5vw, 1.8rem);
 }
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -55,13 +57,115 @@ body {
   min-height: 100dvh;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: var(--basic-color1);
   font-family: "Roboto", sans-serif;
+  font-size: var(--font-size-basic);
 }
 
 a,
 button {
   text-decoration: none;
   cursor: pointer;
+}
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+---------------------------------------------------------------
+common
+---------------------------------------------------------------
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+/*------------------------------------------------------------
+ボタン
+-------------------------------------------------------------*/
+/*デフォルトサイズ*/
+.btn_color1 {
+  background: var(--main-color1);
+  color: #FFF;
+  height: clamp(40px, 5vw, 45px);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  font-family: system-ui;
+  font-weight: 500;
+  line-height: 1;
+  border-radius: 20px;
+  padding: 0 40px;
+  transition: opacity ease 0.3s;
+}
+.btn_color1:hover {
+  opacity: 0.6;
+}
+
+/*アイコン + テキスト*/
+[class^=btn_].in_icon_sign {
+  position: relative;
+}
+[class^=btn_].in_icon_sign:before {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("assets/ico_user.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+/*丸アイコン*/
+.round_btn_color1 {
+  background-color: var(--basic-color2);
+  display: inline-block;
+  width: 45px;
+  min-width: 45px;
+  height: 45px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 50%;
+  transition: opacity ease 0.3s;
+  text-indent: -9999px;
+  position: relative;
+}
+.round_btn_color1:hover {
+  opacity: 0.7;
+}
+.round_btn_color1.icon_logout {
+  background-image: url("assets/ico_logout.svg");
+  background-size: 18px 18px;
+  background-position: center left 16px;
+}
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+---------------------------------------------------------------
+header
+---------------------------------------------------------------
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+header {
+  height: 80px;
+  background: var(--bg-color1);
+}
+header .inner {
+  height: 100%;
+  max-width: 1680px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 2vw, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 a img {
+  height: 50px;
+  aspect-ratio: 22/5;
+}
+header .col2 {
+  display: flex;
+  align-items: center;
+}
+header .col2 [class*=btn]:not(:last-of-type) {
+  margin-right: 20px;
 }/*# sourceMappingURL=application.css.map */
