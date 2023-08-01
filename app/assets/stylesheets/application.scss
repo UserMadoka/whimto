@@ -1,10 +1,25 @@
+:root {
+  --bg-color1: #E3E3D7;
+  --bg-color2: #EFEFEF;
+  --main-color1: #01037B;
+  --main-color2: #D1734C;
+  --main-color3: #4678BF;
+  --main-color4: #5E839B;
+  --main-color5: #CBBC92;
+  --basic-color1: #1A1A1A;
+  --basic-color2: #BFBFBF;
+}
+
+
+
+
+
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
 ---------------------------------------------------------------
 global reset
 ---------------------------------------------------------------
 |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
 
-/*common*/
 *:where(:not(iframe, canvas, img, svg, video):not(svg *)) {
   all: unset;
   display: revert;
@@ -32,4 +47,31 @@ table {
 
 *:focus {
   outline: none !important;
+}
+
+
+
+
+
+/*|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+---------------------------------------------------------------
+layout
+---------------------------------------------------------------
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+
+html,
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+body {
+  color: var(--basic-color1);;
+  font-family: 'Roboto', sans-serif;
+}
+
+a,
+button {
+  text-decoration: none;
+  cursor: pointer;
 }
